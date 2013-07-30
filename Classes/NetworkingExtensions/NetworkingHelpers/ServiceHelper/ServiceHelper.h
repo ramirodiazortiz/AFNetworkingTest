@@ -1,0 +1,21 @@
+//
+//  GetModel.h
+//  AFNetworkingTest
+//
+//  Created by Ramiro Diaz on 12/07/13.
+//  Copyright (c) 2013 Ramiro Diaz. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+@class BaseModel;
+
+@interface ServiceHelper : NSObject
+
++ (void) getModelUsingService:(NSString*) serviceId forClass:(Class) className params:(NSDictionary*) dict successBlock:(void (^)(BaseModel* model))successBlock failureBlock:(void (^)(NSError *error))failureBlock;
+
++ (void) postDataUsingService:(NSString*) serviceId forClass:(Class) className params:(NSDictionary*) dict successBlock:(void (^)(BaseModel* model))successBlock failureBlock:(void (^)(NSError *error))failureBlock;
+
+//Return a dictionary with a translation for those attributes whose name is different in server response. The key is the name in dictionary, the value is the name of the property
+//+ (NSDictionary*) translatePathForModelKey;
+
+@end
